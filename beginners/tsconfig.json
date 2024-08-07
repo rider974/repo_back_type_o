@@ -1,0 +1,20 @@
+{
+   "compilerOptions": {
+      "lib": [
+         "es2021"
+      ],
+      "target": "es2021",
+      "strict": true,
+      "noEmit": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "module": "es2022",
+      "moduleResolution": "node",
+      "allowSyntheticDefaultImports": true,
+      "outDir": "./build",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "isolatedModules": true,
+      "sourceMap": true
+   }
+}
