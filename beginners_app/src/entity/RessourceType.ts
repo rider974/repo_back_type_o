@@ -1,15 +1,14 @@
-// src/entity/ressourceStatus.ts
+// src/entity/ressourceType.ts
 import {  Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
-import { Ressource } from './ressource';
+import { Ressource } from './Ressource.js';
 import type {Relation} from 'typeorm'
-
-@Entity('ressources_status')
-export class RessourceStatus {
+@Entity()
+export class RessourceType {
   @PrimaryGeneratedColumn('uuid')
-  ressource_status_uuid!: string;
+  ressource_type_uuid!: string;
 
-  @Column({ length: 100 })
-  name!: string;
+  @Column({type: 'varchar', length: 50 })
+  type_name!: string;
 
   @CreateDateColumn({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
   created_at!: Date;
@@ -17,6 +16,6 @@ export class RessourceStatus {
   @UpdateDateColumn({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP', onUpdate: 'CURRENT_TIMESTAMP' })
   updated_at!: Date;
 
-  @OneToMany(() => Ressource, (ressource) => ressource.ressourceStatus)
+  @OneToMany(() => Ressource, (ressource) => ressource.ressourceType)
   ressources!: Relation<Ressource[]>;
 }

@@ -1,19 +1,20 @@
-// src/entity/refer.ts
+// src/entity/reference.ts
 import {  Entity, PrimaryColumn, ManyToOne, JoinColumn } from 'typeorm';
-import { Tag } from './tag';
-import { SharingSession } from './sharingSession';
+import { Ressource } from './Ressource.js';
+import { SharingSession } from './SharingSession.js';
 import type {Relation} from 'typeorm'
-@Entity('refer')
-export class Refer {
+
+@Entity()
+export class Reference {
   @PrimaryColumn('uuid')
-  tag_uuid!: string;
+  ressource_uuid!: string;
 
   @PrimaryColumn('uuid')
   sharing_session_uuid!: string;
 
-  @ManyToOne(() => Tag)
-  @JoinColumn({ name: 'tag_uuid' })
-  tag!: Relation<Tag>;
+  @ManyToOne(() => Ressource)
+  @JoinColumn({ name: 'ressource_uuid' })
+  ressource!: Relation<Ressource>;
 
   @ManyToOne(() => SharingSession)
   @JoinColumn({ name: 'sharing_session_uuid' })
