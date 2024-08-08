@@ -6,14 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typeorm": "typeorm-ts-node-esm"
   },
   "dependencies": {
     "next": "14.2.5",
     "pg": "^8.12.0",
     "react": "^18",
     "react-dom": "^18",
-    "reflect-metadata": "^0.2.2"
+    "reflect-metadata": "^0.2.2",
+    "ts-node": "^10.9.2",
+    "typeorm": "^0.3.20"
   },
   "devDependencies": {
     "@types/node": "^20.14.14",
